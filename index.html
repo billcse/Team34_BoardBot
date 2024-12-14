@@ -1,0 +1,138 @@
+<!--Author: Bill Tong-->
+<!--This is the starting screen users will see before the start of a game session-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boardbot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!--Navigation bar at the top-->
+  <header class="header">
+    <a href="#" class="identifier">Team 34</a>
+    <nav class="navigationBar">
+      <a href="#" class="current">Home</a>
+      <a href="https://team34boardbot.wixsite.com/boardbot/" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://github.com/Tong-Bill/Team34_BoardBot/" target="_blank" rel="noopener noreferrer">Github</a>
+    </nav>
+  </header>
+
+  <section class="homepage">
+    <div class="main-content">
+      <h1>Boardbot</h1>
+      <h3><span class="first">It's a</span>
+        <ul class="second">
+          <li><span>robotic monopoly player</span></li>
+        </ul>
+      </h3>
+      <p>Team 34’s goal is to create an intelligent, engaging, and responsive robotic Monopoly player. This product's
+        target audience is directed towards those who desire a companion when playing board games, like the elderly and
+        children. While robots capable of playing more traditional board games such as chess already exist, Boardbot
+        explores the field of social interaction, a field widely left out in the current generation of robots.
+        The main purpose of the project is to delve into human-robot interactions
+        through the usage of robots and Monopoly in hopes of solving loneliness and other social issues prevalent in
+        society.</p>
+      <div class="button-container">
+        <a href="session.html">Play Now</a>
+      </div>
+    </div>
+    <span class="homepage-cover">
+      <div class="image-slider">
+        <div class="control-slider">
+          <div class="up">
+            <i class="fa fa-chevron-up"></i>
+          </div>
+          <div class="down">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+        </div>
+        <div class="wrapper">
+          <!--On left side of scrolling panel, each person's project component is showcased-->
+          <div class="left-side">
+            <div>
+              <h2>Social Interaction</h2>
+              <p>The robot interacts with people through the usage of face emojis, an announcer voice, and a Trump text-to-speech voice over
+                trained from the Tortoise TTS machine learning model.</p>
+            </div>
+            <div>
+              <h2>Computer Vision</h2>
+              <p>Recognizing dice rolls with precision and separating Monopoly related objects on the boardspace from
+                unrelated debris allows for semi-autonomous rounds to be performed by the robot.</p>
+            </div>
+            <div>
+              <h2>Motion Planning</h2>
+              <p>Using Rviz and the Gazebo simulator, arm & gripper actions from the Baxter robot can be planned out
+                before physical execution to ensure the safety of users.</p>
+            </div>
+            <div>
+              <h2>Game Rules</h2>
+              <p>Correct Monopoly game mechanics and rules for operation are implemented to ensure fair play and
+                familiarity for those who have played the official board game.</p>
+            </div>
+            <div>
+              <h2>AI</h2>
+              <p>Acting as the brain of the entire system, the AI is responsible for keeping track of the game state as
+                well as receiving, processing, and sending information as needed to other components during a game
+                session.</p>
+            </div>
+          </div>
+          <!--On right side of scrolling panel, images of each person's corresponding component is displayed-->
+          <div class="right-side">
+            <div>
+              <img src="AiPanel.jpg" alt="picture of nature">
+            </div>
+            <div>
+              <img src="RulesPanel.jpg" alt="picture of nature">
+            </div>
+            <div>
+              <img src="MotionPanel.jpg" alt="picture of nature">
+            </div>
+            <div>
+              <img src="VisionPanel.jpg" alt="picture of nature">
+            </div>
+            <div>
+              <img src="SocialPanel.jpg" alt="picture of nature">
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+  </section>
+
+  <!--Implement JS inside html file for slider button functionality-->
+  <script type="text/javascript">
+    let imageSlider = document.querySelector(".image-slider");
+    let thisPanel = 0;
+    let numberOfPanels = imageSlider.querySelectorAll(".wrapper .left-side > div").length - 1;
+
+    imageSlider.querySelector(".control-slider .up").addEventListener("click", function () {
+      if (thisPanel == 0) {
+        return;
+      }
+      thisPanel--;
+      // -100 viewpoint height to switch to next panel
+      imageSlider.querySelector(".wrapper .left-side div").style.marginTop = `${thisPanel * -100}vh`;
+      imageSlider.querySelector(".wrapper .right-side div").style.marginTop = `${(numberOfPanels - thisPanel) * -100}vh`;
+    }
+    );
+
+    imageSlider.querySelector(".control-slider .down").addEventListener("click", function () {
+      if (thisPanel == numberOfPanels) {
+        return;
+      }
+      thisPanel++;
+      imageSlider.querySelector(".wrapper .left-side div").style.marginTop = `${thisPanel * -100}vh`;
+      imageSlider.querySelector(".wrapper .right-side div").style.marginTop = `${(numberOfPanels - thisPanel) * -100}vh`;
+    }
+    );
+
+  </script>
+</body>
+
+</html>

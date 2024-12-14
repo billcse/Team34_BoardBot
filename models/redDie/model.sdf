@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+	<model name="redDie">
+		<static>false</static>
+		<link name="link">
+			<gravity>true</gravity>
+			<enable_wind>true</enable_wind>
+			<self_collide>false</self_collide>
+			<inertial>
+				<!-- <pose>1.375 -0.35 0.7845 0 0 0</pose> -->
+				<mass>0.1</mass>
+				<inertia>
+					<ixx>0.012709375</ixx>
+					<ixy>0.0</ixy>
+					<ixz>0.0</ixz>
+					<iyy>0.012709375</iyy>
+					<iyz>0.0</iyz>
+					<izz>0.012709375</izz>
+				</inertia>
+			</inertial>
+			<collision name="collision">
+				<geometry>
+					<mesh>
+						<uri>model://redDie/meshes/redDie.dae</uri>
+						<scale>1.25 1.25 1.25</scale>
+					</mesh>
+				</geometry>
+				<friction>
+					<ode>
+						<mu>0</mu>
+						<mu2>0</mu2> <!-- Friction subject to change -->
+					</ode>
+				</friction>
+			</collision>
+		
+			<visual name="visual">
+				<cast_shadows>true</cast_shadows>
+				<transparency>0</transparency>
+				<geometry>
+					<mesh>
+						<uri>model://redDie/meshes/redDie.dae</uri>
+						<scale>1.25 1.25 1.25</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+	</model>
+</sdf>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+	<model name="tophat">
+		<static>false</static>
+		<link name="link">
+			<gravity>true</gravity>
+			<enable_wind>true</enable_wind>
+			<self_collide>false</self_collide>
+			<inertial>
+				<mass>0.1</mass>
+				<inertia>
+					<ixx>0.00006484375</ixx>
+					<ixy>0.0</ixy>
+					<ixz>0.0</ixz>
+					<iyy>0.000162109375</iyy>
+					<iyz>0.0</iyz>
+					<izz>0.000162109375</izz>
+				</inertia>
+			</inertial>
+			<collision name="collision">
+				<geometry>
+					<mesh>
+						<uri>model://tophat/meshes/tophat.dae</uri>
+						<scale>1.75 1.75 2.0</scale>
+					</mesh>
+				</geometry>
+				<friction>
+					<ode>
+						<mu>0</mu> <!-- Need more calculations -->
+						<mu2>0</mu2>
+					</ode>
+				</friction>
+			</collision>
+		
+			<visual name="visual">
+				<cast_shadows>true</cast_shadows>
+				<transparency>0</transparency>
+				<geometry>
+					<mesh>
+						<uri>model://tophat/meshes/tophat.dae</uri>
+						<scale>1.75 1.75 2.0</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+	</model>
+</sdf>
