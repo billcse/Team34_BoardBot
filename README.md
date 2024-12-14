@@ -1,8 +1,8 @@
 # Team34_BoardBot
 
-This was a senior project for CS426 at the University of Nevada, Reno 2022-2023
-Team members: Bill Tong, Edmund Tham, Adam Hurd, Wyatt, Boe
-Professors: Sergiu Dascalu and Devrin Lee
+##This was a senior project for CS426 at the University of Nevada, Reno 2022-2023
+##Team members: Bill Tong, Edmund Tham, Adam Hurd, Wyatt, Boe
+##Professors: Sergiu Dascalu and Devrin Lee
 
 This project assumes the following installations:
 
